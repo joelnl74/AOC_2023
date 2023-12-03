@@ -48,15 +48,15 @@ int Main()
         index++;
     }
 
-    var total = 0;
-    var validGames = gamesPlayed.Where(x => x.IsValid).ToArray();
+    int total = 0;
+    Game[] validGames = gamesPlayed.Where(x => x.IsValid).ToArray();
 
     for (int i = 0; i < gamesPlayed.Count; i++)
     {
-        var game = gamesPlayed[i];
-        var sum = game.Red * game.Green * game.Blue;
+        Game game = gamesPlayed[i];
+        int productOfRGB = game.Red * game.Green * game.Blue;
 
-        total += sum;
+        total += productOfRGB;
     }    
 
     Console.WriteLine(validGames.Sum(y => y.Id));
