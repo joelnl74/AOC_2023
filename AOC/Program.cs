@@ -2,6 +2,7 @@
 // string line in File.ReadLines("../../../Resources/aoc.txt"
 
 using AOC;
+using System.Diagnostics;
 
 List<Game> gamesPlayed = new List<Game>();
 
@@ -47,8 +48,19 @@ int Main()
         index++;
     }
 
+    var total = 0;
     var validGames = gamesPlayed.Where(x => x.IsValid).ToArray();
+
+    for (int i = 0; i < gamesPlayed.Count; i++)
+    {
+        var game = gamesPlayed[i];
+        var sum = game.Red * game.Green * game.Blue;
+
+        total += sum;
+    }    
+
     Console.WriteLine(validGames.Sum(y => y.Id));
+    Console.WriteLine(total);
 
     return 1;
 }

@@ -8,19 +8,18 @@
 
         public bool IsValid { get; private set;  }
         public int Id { get; private set; }
-
-        readonly int red;
-        readonly int green;
-        readonly int blue;
+        public int Red { get; private set; }
+        public int Green { get; private set; }
+        public int Blue { get; private set; }
 
         public Game(int id, int r, int g, int b)
         {
             Id = id;
-            red = r; 
-            green = g; 
-            blue= b;
+            Red = r; 
+            Green = g; 
+            Blue= b;
 
-            IsValid = red <= VALID_RED && blue <= VALID_BLUE && green <= VALID_GREEN;
+            IsValid = Red <= VALID_RED && Blue <= VALID_BLUE && Green <= VALID_GREEN;
         }
     }
 }
