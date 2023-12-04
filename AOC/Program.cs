@@ -2,6 +2,6 @@
 
 using AOC;
 
-// PartOne partOne = new PartOne();
+PartOne partOne = new PartOne();
 PartTwo partTwo = new PartTwo();
 
